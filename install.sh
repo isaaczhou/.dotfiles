@@ -1,7 +1,7 @@
 # preinstall
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl -y
-sudo apt install build-essential
+# sudo apt update && sudo apt upgrade -y
+# sudo apt install curl -y
+# sudo apt install build-essential -y
 
 # install nix
 curl -L https://nixos.org/nix/install | sh
@@ -23,6 +23,7 @@ nix-env -iA \
         nixpkgs.bat \
         nixpkgs.direnv \
 
+
 # stow all package
 stow git
 stow zsh
@@ -34,14 +35,6 @@ command -v zsh | sudo tee -a /etc/shells
 # change default shell to zsh
 sudo chsh -s $(which zsh) $USER
 
-# add nix to .zshrc
-echo "if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi" >> .zshrc
-
 # use antibody to bundle zsh plugins
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
-source ~/.zsh_plugins.sh
 
-# add aliases
-echo "alias ll='ls -lah'" >> .zshrc
-echo "alias vim=nvim" >> .zshrc
-echo "alias vi=nvim" >> .zshrc
