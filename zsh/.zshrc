@@ -30,7 +30,7 @@ alias vimrc='vim ${HOME}/.config/nvim/init.vim'
 # cat -> bat
 alias cat='bat'
 # colored ls output
-alias ls='ls -al --color'
+alias ll='ls -al --color'
 
 # DIRCOLORS (MacOS)
 export CLICOLOR=1
@@ -50,3 +50,9 @@ if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export GOROOT=/home/isaac/go
+export GOPATH=/home/isaac/repo/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+alias py3="python310"
